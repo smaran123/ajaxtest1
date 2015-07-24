@@ -1,0 +1,9 @@
+<%= form_for([@article,@article.comments.build])  do |f|%>
+<%= f.label :CommenterName %>
+<%= f.text_field :commenter %>
+<br/>	
+<%= f.label :Comment %>
+<%= f.text_field :body %>
+<br/>	
+<%=f.submit%>
+<%end%>
