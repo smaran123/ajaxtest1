@@ -1,5 +1,5 @@
-<h2>Create Comment</h2>
-<%= form_for([@article,@article.comments.build], :remote => :true, :method => "POST")  do |f|%>
+<h2> Edit Comment</h2>
+<%= form_for([@article,@comment], :remote => :true, :method => "PUT")  do |f|%>
 <%= f.label :CommenterName %>
 <%= f.text_field :commenter %>
 <br/>	

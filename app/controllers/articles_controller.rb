@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-	before_action :set_article, :except => [:index,:new,:create]
+	before_action :set_article, :except => [:index,:new,:create, :ajaxtext]
 
 	def new
 		@article = Article.new
@@ -37,6 +37,12 @@ class ArticlesController < ApplicationController
 	def destroy
 		@article.destroy
 		redirect_to articles_path
+	end
+
+	def ajaxtext
+		respond_to do |format|
+			format.js
+		end
 	end
 
 	private
