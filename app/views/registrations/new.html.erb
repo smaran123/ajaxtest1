@@ -1,0 +1,120 @@
+<div class="container">
+<legend>Registration Form</legend>
+<%= form_for(@user, :url => registrations_path, :method => "POST") do |f| %>
+<div class="form-group">
+<%= f.label :FirstName %>
+<div class="form-actions">
+<%= f.text_field :first_name %>
+</div>
+</div>
+
+<div class="form-group">
+<%= f.label :LastName %>
+<div class="form-actions">
+<%= f.text_field :last_name %>
+</div>
+</div>
+
+<div class="form-group">
+      <label class="control-label" for="input01">Company/Organization Name</label> 
+<div class="form-actions">
+<%= f.text_field :company_name %>
+</div>
+</div>
+
+<div class="form-group">
+<%= f.label :Email %>
+<div class="form-actions">
+<%= f.text_field :email %>
+</div>
+</div>
+
+<div class="form-group">
+<%= f.label :Gender %>
+<div class="form-actions">
+<%= f.select :gender, options_for_select([["Select","Select"],["Male","Male"],["Female","Female"]],:selected => f.object.gender) %>
+</div>
+</div>
+
+<div class="form-group">
+<%= f.label :image %>
+<%= f.file_field :image %>
+</div>
+
+<div class="form-group">
+<%= f.label :RideFor %>
+<div class="form-actions">
+<%= f.select :ride_for, [["Select",""],["TakeRide","TakeRide"],["OfferRide","OfferRide"]], :selected => f.object.ride_for %>
+</div>
+</div>
+
+<div class="form-group">
+<%= f.label :FromLocation %>
+<div class="form-actions">
+<%= f.text_field :from_location %>
+</div>
+</div>
+
+<div class="form-group">
+<%= f.label :Tolocation %>
+<div class="form-actions">
+<%= f.text_field :to_location %>
+</div>
+</div>
+
+<div class="form-group">
+<%= f.label :Startday %>
+<div class="form-actions">
+<%= f.select :start_day, options_for_select([["Select", ""]]+Days) %>
+</div>
+</div>
+
+
+<div class="form-group">
+<%= f.label :Endday %>
+<div class="form-actions">
+<%= f.select :end_day, options_for_select([["Select", ""]]+Days) %>
+</div>
+</div>
+
+<div class="form-group">
+<%= f.label :start_time %>
+<div class="form-actions">
+<%= f.select :start_time, options_for_select([["Select", ""]]+Times) %>
+</div>
+</div>
+
+<div class="form-group">
+<%= f.label :end_time %>
+<div class="form-actions">
+<%= f.select :end_time, options_for_select([["Select", ""]]+Times)%>
+</div>
+</div>
+
+<div class="form-group">
+<%= f.label :mobile %>
+<div class="form-actions">
+<%= f.text_field :mobile %>
+</div>
+</div>
+
+<div class="form-actions buttonsb">
+<fieldset>
+<%= f.submit %>
+</fieldset>
+</div>
+<%end%>
+
+</div>
+
+
+<style>
+.buttonsb {
+    background-color: #f5f5f5;
+    border-top: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 19px 20px 20px;
+}
+
+</style>

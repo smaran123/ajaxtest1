@@ -1,0 +1,18 @@
+<div style="float:right">
+<%= link_to "New", new_registration_path %>
+</div>
+
+
+<% @users.each do |user| %>
+<div class="form-field">
+<%= user.first_name %>
+<%= user.last_name %>
+<%= user.company_name %>
+<%= user.email %>
+<%= user.from_location %>
+<%= user.to_location %>
+<%= user.start_time %>
+<%= user.end_time %>
+</div>
+<%end%>
+
